@@ -47,13 +47,13 @@ dconf write /org/gnome/shell/extensions/tiling-assistant/enable-tiling-popup fal
 
 # install jetbrains font
 mkdir -p $HOME/.local/share/fonts/jetbrains
-wget https://github.com/howzitcal/gnome_stellar/raw/refs/heads/main/resources/gnome_50/jetbrains-fonts.tar -O $DOWNLOAD_PATH/jetbrains-fonts.tar
+wget https://github.com/howzitcal/stellar_gnome/raw/refs/heads/main/resources/gnome_50/jetbrains-fonts.tar -O $DOWNLOAD_PATH/jetbrains-fonts.tar
 tar -xf $DOWNLOAD_PATH/jetbrains-fonts.tar -C $HOME/.local/share/fonts/jetbrains --wildcards "*.ttf"
 fc-cache -f
 
 # get wallpaper
 mkdir -p $HOME/Pictures/wallpapers
-wget https://github.com/howzitcal/gnome_stellar/raw/refs/heads/main/resources/gnome_50/window-to-the-world-desktop-image-only-1.png -O $HOME/Pictures/wallpapers/nasa-1.png
+wget https://github.com/howzitcal/stellar_gnome/raw/refs/heads/main/resources/gnome_50/window-to-the-world-desktop-image-only-1.png -O $HOME/Pictures/wallpapers/nasa-1.png
 
 # caffine customizations
 dconf write /org/gnome/shell/extensions/caffeine/show-indicator "'always'"
