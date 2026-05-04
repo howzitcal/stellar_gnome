@@ -68,7 +68,7 @@ dconf write /org/gnome/shell/extensions/dynamic-music-pill/vertical-offset 0
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/panel-pill-height 42
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/popup-vinyl-square false
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/popup-follow-transparency false
-dconf write /org/gnome/shell/extensions/dynamic-music-pill/enable-lyrics true
+dconf write /org/gnome/shell/extensions/dynamic-music-pill/enable-lyrics false
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/show-pill-border false
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/panel-art-size 26
 dconf write /org/gnome/shell/extensions/dynamic-music-pill/popup-vinyl-rotate true
