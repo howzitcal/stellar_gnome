@@ -85,87 +85,38 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.background picture-uri-dark "file:///$HOME/Pictures/wallpapers/nasa-1.png"
 
 # dash to panel customizations (lord have mercy!)
+MONITORS=$(grep -P 'vendor|product|serial' ~/.config/monitors.xml | sed 's/<\/\?[^>]\+>//g; s/^[ \t]*//' | awk 'NR%3==1 {v=$0} NR%3==0 {print v "-" $0}' | sort -u)
+ELEMENTS='[{"element": "activitiesButton","visible": false,"position": "stackedTL"},{"element": "showAppsButton","visible": true,"position": "stackedTL"},{"element": "taskbar","visible": true,"position": "stackedTL"},{"element": "centerBox","visible": true,"position": "stackedBR"},{"element": "rightBox","visible": true,"position": "stackedBR"},{"element": "leftBox","visible": true,"position": "stackedBR"},{"element": "systemMenu","visible": true,"position": "stackedBR"},{"element": "dateMenu","visible": true,"position": "stackedBR"},{"element": "desktopButton","visible": true,"position": "stackedBR"}]'
+POSITIONS_JSON='{ "": '$ELEMENTS
+
+for MON in $MONITORS; do
+    POSITIONS_JSON+=', "'$MON'": '$ELEMENTS
+done
+
+POSITIONS_JSON+=' }'
+FINAL_POSITIONS=$(echo $POSITIONS_JSON | sed 's/"/\\"/g')
+
 echo "[/]
 animate-appicon-hover=false
 animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
-app-ctrl-hotkey-1=['<Control><Super>1']
-app-ctrl-hotkey-10=['<Control><Super>0']
-app-ctrl-hotkey-2=['<Control><Super>2']
-app-ctrl-hotkey-3=['<Control><Super>3']
-app-ctrl-hotkey-4=['<Control><Super>4']
-app-ctrl-hotkey-5=['<Control><Super>5']
-app-ctrl-hotkey-6=['<Control><Super>6']
-app-ctrl-hotkey-7=['<Control><Super>7']
-app-ctrl-hotkey-8=['<Control><Super>8']
-app-ctrl-hotkey-9=['<Control><Super>9']
-app-ctrl-hotkey-kp-1=['<Control><Super>KP_1']
-app-ctrl-hotkey-kp-10=['<Control><Super>KP_0']
-app-ctrl-hotkey-kp-2=['<Control><Super>KP_2']
-app-ctrl-hotkey-kp-3=['<Control><Super>KP_3']
-app-ctrl-hotkey-kp-4=['<Control><Super>KP_4']
-app-ctrl-hotkey-kp-5=['<Control><Super>KP_5']
-app-ctrl-hotkey-kp-6=['<Control><Super>KP_6']
-app-ctrl-hotkey-kp-7=['<Control><Super>KP_7']
-app-ctrl-hotkey-kp-8=['<Control><Super>KP_8']
-app-ctrl-hotkey-kp-9=['<Control><Super>KP_9']
-app-hotkey-1=['<Super>1']
-app-hotkey-10=['<Super>0']
-app-hotkey-2=['<Super>2']
-app-hotkey-3=['<Super>3']
-app-hotkey-4=['<Super>4']
-app-hotkey-5=['<Super>5']
-app-hotkey-6=['<Super>6']
-app-hotkey-7=['<Super>7']
-app-hotkey-8=['<Super>8']
-app-hotkey-9=['<Super>9']
-app-hotkey-kp-1=['<Super>KP_1']
-app-hotkey-kp-10=['<Super>KP_0']
-app-hotkey-kp-2=['<Super>KP_2']
-app-hotkey-kp-3=['<Super>KP_3']
-app-hotkey-kp-4=['<Super>KP_4']
-app-hotkey-kp-5=['<Super>KP_5']
-app-hotkey-kp-6=['<Super>KP_6']
-app-hotkey-kp-7=['<Super>KP_7']
-app-hotkey-kp-8=['<Super>KP_8']
-app-hotkey-kp-9=['<Super>KP_9']
-app-shift-hotkey-1=['<Shift><Super>1']
-app-shift-hotkey-10=['<Shift><Super>0']
-app-shift-hotkey-2=['<Shift><Super>2']
-app-shift-hotkey-3=['<Shift><Super>3']
-app-shift-hotkey-4=['<Shift><Super>4']
-app-shift-hotkey-5=['<Shift><Super>5']
-app-shift-hotkey-6=['<Shift><Super>6']
-app-shift-hotkey-7=['<Shift><Super>7']
-app-shift-hotkey-8=['<Shift><Super>8']
-app-shift-hotkey-9=['<Shift><Super>9']
-app-shift-hotkey-kp-1=['<Shift><Super>KP_1']
-app-shift-hotkey-kp-10=['<Shift><Super>KP_0']
-app-shift-hotkey-kp-2=['<Shift><Super>KP_2']
-app-shift-hotkey-kp-3=['<Shift><Super>KP_3']
-app-shift-hotkey-kp-4=['<Shift><Super>KP_4']
-app-shift-hotkey-kp-5=['<Shift><Super>KP_5']
-app-shift-hotkey-kp-6=['<Shift><Super>KP_6']
-app-shift-hotkey-kp-7=['<Shift><Super>KP_7']
-app-shift-hotkey-kp-8=['<Shift><Super>KP_8']
-app-shift-hotkey-kp-9=['<Shift><Super>KP_9']
 appicon-margin=0
 appicon-padding=6
 click-action='TOGGLE-SHOWPREVIEW'
 dot-position='BOTTOM'
 dot-style-focused='DOTS'
 dot-style-unfocused='DOTS'
-extension-version=73
 focus-highlight-dominant=true
 hotkeys-overlay-combo='TEMPORARILY'
 intellihide=false
 intellihide-key-toggle=['<Super>i']
 multi-monitors=false
 panel-anchors='{\"\":\"MIDDLE\"}'
-panel-element-positions='{\"\": [{\"element\": \"activitiesButton\",\"visible\": false,\"position\": \"stackedTL\"},{\"element\": \"showAppsButton\",\"visible\": true,\"position\": \"stackedTL\"},{\"element\": \"taskbar\",\"visible\": true,\"position\": \"stackedTL\"},{\"element\": \"centerBox\",\"visible\": true,\"position\": \"stackedBR\"},{\"element\": \"rightBox\",\"visible\": true,\"position\": \"stackedBR\"},{\"element\": \"leftBox\",\"visible\": true,\"position\": \"stackedBR\"},{\"element\": \"systemMenu\",\"visible\": true,\"position\": \"stackedBR\"},{\"element\": \"dateMenu\",\"visible\": true,\"position\": \"stackedBR\"},{\"element\": \"desktopButton\",\"visible\": true,\"position\": \"stackedBR\"}]}'
+panel-element-positions='$FINAL_POSITIONS'
 panel-element-positions-monitors-sync=false
 panel-lengths='{}'
 panel-positions='{\"\":\"BOTTOM\"}'
 panel-sizes='{}'
+hot-keys=true
 prefs-opened=false
 hide-overview-on-startup=true
 primary-monitor=''
