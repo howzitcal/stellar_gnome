@@ -8,12 +8,12 @@ stellar_gnome aims to give you a clean, informative GNOME experience with a few 
 
 ### The taskbar
 
-<img src="./screenshots/readme-panel.png"/>
+<img src="./screenshots/stellar_gnome_panel.png"/>
 
 stellar_gnome uses dash to panel as the extension of choice to give you all the information you need at a glance, why not dash to dock? Dash to dock a great extension, however my opinion is that having a panel at the top of the screen and a dock at the bottom is a lot of wasted space, even if the dock auto hides. Dash to panel allows us to have all the gnome panel items, along with some great extensions, running apps and more. This way we get the best of both worlds in a single bar - it's an efficient use of space and provides you the user with everything you need at a glance.
 
 ### Other tweaks
-Dash to panel is probably the biggest customization, other than that we install some extensions to make life easier, you can get a full break down in the [Release notes](./releases/)
+Dash to panel is probably the biggest customization, other than that we install some extensions to make life easier, you can get a full break down in the [Release notes](./release_notes/)
 
 
 ### Opinionated
@@ -26,4 +26,4 @@ stellar_gnome is opinionated, I the author have made certain tweaks and changes 
 ## Time to take off? - Get Started!
 | GNOME Version + Release Notes | Install Script |
 |-------------------------------|----------------|
-| [GNOME 50](./releases/gnome_50.md) | `wget -qO - https://raw.githubusercontent.com/howzitcal/stellar_gnome/main/gnome_50.sh \| bash` |
+| [GNOME 50](./release_notes/gnome_50.md) | `wget -qO - https://raw.githubusercontent.com/howzitcal/stellar_gnome/main/releases/gnome_50.sh \| bash` |

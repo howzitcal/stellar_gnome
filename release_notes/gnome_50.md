@@ -7,6 +7,9 @@ This is the first release for stellar_gnome, tested on the current stable versio
 <img src="../screenshots/gnome_50.png"/>
 
 
+## Install Script
+```wget -qO - https://raw.githubusercontent.com/howzitcal/stellar_gnome/main/releases/gnome_50.sh | bash```
+
 ## The following extensions will be installed
 - [Alphabetical App Grid by Stuart Hayhurst](https://extensions.gnome.org/extension/4269/alphabetical-app-grid/)
 - [Always Show Titles In Overview by 5q0Fw](https://extensions.gnome.org/extension/1689/always-show-titles-in-overview/)
