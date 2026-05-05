@@ -1,4 +1,4 @@
-# Stellar Gnome 50 Release Notes:
+# Stellar GNOME 50 Release Notes:
 
 This is the first release for stellar_gnome, tested on the current stable version, GNOME 50. Most of the issues and bugs have been figured out. This release was tested on Fedora, however it should work fine on all GNOME based distros, a suggestion would be to disable all extensions that are dock related before running this to ensure there are no visual abnormalities. 
 
