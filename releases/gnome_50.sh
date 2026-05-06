@@ -23,7 +23,7 @@ echo "Running customizations..."
 
 # app indicators customizations
 dconf write /org/gnome/shell/extensions/appindicator/icon-size 19
-dconf write /org/gnome/shell/extensions/appindicator/tray-pos "'right'"
+dconf write /org/gnome/shell/extensions/appindicator/tray-pos "'center'"
 
 # remove all app menu folders and auto categories, we can sort our own apps, thanks!
 gsettings reset org.gnome.desktop.app-folders folder-children
@@ -87,7 +87,7 @@ gsettings set org.gnome.desktop.background picture-uri-dark "file:///$HOME/Pictu
 
 # dash to panel customizations (lord have mercy!)
 MONITORS=$(grep -P 'vendor|product|serial' ~/.config/monitors.xml | sed 's/<\/\?[^>]\+>//g; s/^[ \t]*//' | awk 'NR%3==1 {v=$0} NR%3==0 {print v "-" $0}' | sort -u)
-ELEMENTS='[{"element": "activitiesButton","visible": false,"position": "stackedTL"},{"element": "showAppsButton","visible": true,"position": "stackedTL"},{"element": "taskbar","visible": true,"position": "stackedTL"},{"element": "centerBox","visible": true,"position": "stackedBR"},{"element": "rightBox","visible": true,"position": "stackedBR"},{"element": "leftBox","visible": true,"position": "stackedBR"},{"element": "systemMenu","visible": true,"position": "stackedBR"},{"element": "dateMenu","visible": true,"position": "stackedBR"},{"element": "desktopButton","visible": true,"position": "stackedBR"}]'
+ELEMENTS='[{"element": "activitiesButton","visible": false,"position": "stackedTL"},{"element": "showAppsButton","visible": true,"position": "stackedTL"},{"element": "taskbar","visible": true,"position": "stackedTL"},{"element": "rightBox","visible": true,"position": "stackedBR"},{"element": "leftBox","visible": true,"position": "stackedBR"},{"element": "centerBox","visible": true,"position": "stackedBR"},{"element": "systemMenu","visible": true,"position": "stackedBR"},{"element": "dateMenu","visible": true,"position": "stackedBR"},{"element": "desktopButton","visible": true,"position": "stackedBR"}]'
 POSITIONS_JSON='{ "": '$ELEMENTS
 
 for MON in $MONITORS; do
