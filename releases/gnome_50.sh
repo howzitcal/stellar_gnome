@@ -1,6 +1,7 @@
 #!/bin/bash
 
 DOWNLOAD_PATH="$HOME/.tmp_downloads"
+mkdir $DOWNLOAD_PATH
 
 echo "Start adding gnome extensions..."
 gdbus call --session --dest org.gnome.Shell.Extensions --object-path /org/gnome/Shell/Extensions --method org.gnome.Shell.Extensions.InstallRemoteExtension "AlphabeticalAppGrid@stuarthayhurst"
